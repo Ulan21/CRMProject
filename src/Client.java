@@ -1,4 +1,5 @@
 public class Client {
+    private int clientId;
     private String name;
     private String phoneNumber;
     private String clientCity;
@@ -10,6 +11,16 @@ public class Client {
         this.clientCity = clientCity;
         this.clientaddress = clientaddress;
     }
+
+
+    public int getClientId(){
+        return clientId;
+    }
+
+    public void setClientId(int clientId) {
+        this.clientId = clientId;
+    }
+
 
     public String getName() {
         return name;
@@ -30,7 +41,7 @@ public class Client {
 
     @Override
     public String toString(){
-        return name + " " + phoneNumber + " " + clientCity+
+        return clientId + " " + name + " " + phoneNumber + " " + clientCity+
                 " " + clientaddress;
     }
 
