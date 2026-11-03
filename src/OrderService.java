@@ -25,6 +25,11 @@ public class OrderService {
             }
         }
 
+        public void orderByDate(){
+            orders.sort(new CompareOrder());
+            printallOrders();
+        }
+
 
 
 

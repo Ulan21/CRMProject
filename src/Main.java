@@ -5,8 +5,8 @@ public class Main{
 
     public static void main(String[] args) {
             Client client1 = new Client("Ulan","+7 777 7777","Atyrau","Tashenov 27");
+            Client client2 = new Client("Qyran","+7 777 7766","Almaty","Satpayev 133/7");
             Client client3 = new Client("Ulan","+7 777 7755","Shymkent","Bigeldinov 10");
-            Client client2 = new Client("Qyran","+7 777 7766","Almaty","Satpayev 133                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            /7");
             LocalDate order1Date = LocalDate.of(2026,10,28);
             LocalDate order2Date = LocalDate.of(2026,11,13);
             LocalDate order3Date = LocalDate.of(2026,8,10);
@@ -21,11 +21,9 @@ public class Main{
             orderService.addOrder(order3);
             orderService.addOrder(order4);
 
-            orderService.printallOrders();
+//            orderService.printallOrders();
 
-//            System.out.println("--Заказы");
-//            orderService.clientByNumber("+7 777 7777");
-//            orderService.clientByNumber("+7 777 7766");
+            orderService.orderByDate();
 
         }
     }
