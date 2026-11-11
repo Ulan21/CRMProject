@@ -26,8 +26,11 @@ public class OrderService {
         }
 
         public void orderByDate(){
-            orders.sort(new CompareOrder());
-            printallOrders();
+            List<Order> ordersCopy = new ArrayList<>(orders);
+            ordersCopy.sort(new CompareOrder());
+            for (Order order : ordersCopy) {
+                System.out.println(order);
+            }
         }
 
 

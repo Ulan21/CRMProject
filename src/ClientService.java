@@ -8,7 +8,7 @@ public class ClientService {
 
     public Client addClient(Client client) {
         String phone = client.getPhoneNumber();
-        if (clients.containsKey(phone)) {
+        if (phoneExists(phone)) {
             System.out.println("Client with this number already exists");
             return clients.get(phone);
         }else{
@@ -18,4 +18,9 @@ public class ClientService {
         }
         return client;
     }
+
+    public boolean phoneExists(String phone){
+        return clients.containsKey(phone);
+    }
 }
+
