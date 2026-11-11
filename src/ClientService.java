@@ -2,7 +2,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ClientService {
-    private Map<String,Client> clients = new HashMap<>();
+    private Map<String, Client> clients = new HashMap<>();
     private int countClients = 1;
 
 
@@ -11,16 +11,25 @@ public class ClientService {
         if (phoneExists(phone)) {
             System.out.println("Client with this number already exists");
             return clients.get(phone);
-        }else{
+        } else {
             client.setClientId(countClients);
             countClients++;
-            clients.put(phone,client);
+            clients.put(phone, client);
         }
         return client;
     }
 
-    public boolean phoneExists(String phone){
+    public boolean phoneExists(String phone) {
         return clients.containsKey(phone);
     }
-}
+
+    public Client searchByNumber(String phoneNumber) {
+        return clients.get(phoneNumber);
+        }
+    }
+
+
+
+
+
 
