@@ -72,12 +72,22 @@ public class Main {
                             scanner.nextLine();
                         System.out.println("Type a phone: ");
                         String phone = scanner.nextLine();
-                        if (clientService.phoneExists(phone)) {
-                               Client haveClient = clientService.searchByNumber(phone);
-                                System.out.println(haveClient);
+                        Client hasClient = clientService.searchByNumber(phone);
+                        if (hasClient == null) {
+                                System.out.println("We dont have client with this number");
                             }
                         else{
-                                System.out.println("We dont have client with this number");
+                            System.out.println("Type a order name");
+                            String orderName = scanner.nextLine();
+                            System.out.println("Type a order price");
+                            int orderPrice = scanner.nextInt();
+                            System.out.println("Type a order date");
+                            scanner.nextLine();
+                            String date = scanner.nextLine();
+                            LocalDate orderDate = LocalDate.parse(date);
+                            Order newOrder = new Order(orderName,orderPrice,orderDate,hasClient);
+                            orderService.addOrder(newOrder);
+                            System.out.println(newOrder);
                         }
                     }
                     default -> System.out.println("Wrong input");
